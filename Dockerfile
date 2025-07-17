@@ -1,9 +1,11 @@
 FROM python:3.10-slim-buster
 
-WORKDIR /app
+WORKDIR /helper
+COPY . /helper
 
+WORKDIR /app
 COPY . /app
 
 RUN pip install -r requirements.txt
 
-CMD ["python3", "app.py"]
+CMD ["python3", "helper.py", "app.py"]

@@ -5,7 +5,7 @@ from pinecone import Pinecone
 from pinecone import ServerlessSpec
 from langchain_pinecone import PineconeVectorStore
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from helper import some_function
+
 load_dotenv()
 
 PINECONE_API_KEY = os.getenv('PINECONE_API_KEY')
