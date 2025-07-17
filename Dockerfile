@@ -1,11 +1,12 @@
-FROM python:3.10-slim-buster
-
-WORKDIR /helper
-COPY . /helper
-WORKDIR /store_index
-COPY . /store_index
+FROM python:3.10-slim
 WORKDIR /app
-COPY . /app
-RUN pip install -r requirements.txt
-
-CMD ["python3", "helper.py" , "store_index.py" "app.py"]
+RUN apt-get update && apt-get install -y gcc g++ libpq-dev && rm -rf /var/lib/apt/lists/*
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY app.py src/helper.py store_index.py ./
+COPY templates/ templates/
+COPY static/ static/
+RUN pip install --no-cache-dir python-dotenv
+EXPOSE 8080
+ENV FLASK_ENV=production
+CMD ["python3", "app.py"]
