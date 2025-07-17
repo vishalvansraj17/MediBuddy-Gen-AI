@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 import os
 import logging
-from helper import some_function
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
