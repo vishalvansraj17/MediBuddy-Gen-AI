@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      # No renderinc/action-deploy needed; Render auto-deploys on push
+      # No additional steps needed; Render auto-deploys on push to main
