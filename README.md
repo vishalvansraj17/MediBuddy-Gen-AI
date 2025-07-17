@@ -1,5 +1,5 @@
 # MediBuddy-Gen-AI
-
+ Acces MediBuy Chatbot at : https://medibuddy-gen-ai.onrender.com
 # How to run?
 ### STEPS:
 
